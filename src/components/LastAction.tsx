@@ -1,47 +1,32 @@
 import React from 'react'
 import moment from 'moment-with-locales-es6'
-import { StyleSheet, View, Text, Image } from 'react-native'
+import { StyleSheet, View, Text, Image, ScrollView, Dimensions, Platform } from 'react-native'
 moment.locale('tr')
+const dumpData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 export default function LastAction() {
     return (
-        <View style={styles.container}>
-            <Text style={styles.lastActionText}>Son Hareketler</Text>
-            <ActionCard
-                userName='Cansu Ural'
-                processName='Giden Transfer'
-                processPrice={100}
-                processDate={new Date()}
-                processType={true}
-            />
-            <ActionCard
-                userName='Cansu Ural'
-                processName='Giden Transfer'
-                processPrice={100}
-                processDate={new Date()}
-                processType={false}
-            />
-            <ActionCard
-                userName='Cansu Ural'
-                processName='Giden Transfer'
-                processPrice={100}
-                processDate={new Date()}
-                processType={true}
-            />
-            <ActionCard
-                userName='Cansu Ural'
-                processName='Giden Transfer'
-                processPrice={100}
-                processDate={new Date()}
-                processType={true}
-            />
+        <View>
+
+            {
+                dumpData.map((item) => {
+                    return <ActionCard
+                        key={item}
+                        userName='Cansu Ural'
+                        processName='Giden Transfer'
+                        processPrice={item}
+                        processDate={new Date()}
+                        processType={true}
+                    />
+                })
+            }
         </View>
     )
 }
-const ActionCard = (props: { userName: string, processName: string, processPrice: number, processType: boolean, processDate: Date }) => {
+export const ActionCard = (props: { userImage?: string, userName: string, processName: string, processPrice: any, processType: boolean, processDate: Date }) => {
     return (
         <View style={styles.cardContainer}>
             <View style={styles.userInfo}>
-                <Image source={require('../../images/UserPhoto.png')} style={{ height: 40, width: 40 }} />
+                <Image source={props.userImage != null ? { uri: props.userImage } : require('../../images/UserPhoto.png')} style={{ height: 40, width: 40 }} />
                 <View style={{ flexDirection: 'column', justifyContent: 'space-around', marginLeft: 10 }}>
                     <Text style={styles.userNameText}>{props.userName}</Text>
                     <Text style={styles.userProcessText}>{props.processName}</Text>
@@ -55,21 +40,16 @@ const ActionCard = (props: { userName: string, processName: string, processPrice
     )
 }
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: 20, marginBottom: 20,
-    },
     lastActionText: {
         fontSize: 18,
         fontWeight: 'bold',
         color: '#141414'
     },
     cardContainer: {
-        flex: 1,
         height: 70,
         borderBottomColor: '#e7e7e7',
         borderBottomWidth: 1,
-        paddingTop: 15, paddingBottom: 15,
+        paddingBottom: 15, paddingTop: 15,
         flexDirection: 'row',
     },
     userInfo: {
