@@ -10,6 +10,7 @@ import QuickProcess, { QuickProcessHeader } from '../components/QuickProcess'
 import LastAction from '../components/LastAction'
 import MyCards from '../components/MyCards'
 import BottomSheet, { BottomSheetScrollView, BottomSheetView } from '@gorhom/bottom-sheet'
+import { useNavigation } from '@react-navigation/native'
 //#region style
 const styles = StyleSheet.create({
     notFoundCardInfoContainer: {
@@ -207,6 +208,16 @@ export default function Home(props: any) {
     )
 }
 export const ShortCut = () => {
+    const navigation = useNavigation()
+
+    const onSendMoneyPress = () => {
+        navigation.navigate('SendMoney')
+    }
+
+    const onRequestMoneyPress = () => {
+        navigation.navigate('RequestMoney')
+    }
+
     return (
         <View style={styles.shortCutContainer}>
             <TouchableOpacity
@@ -217,12 +228,14 @@ export const ShortCut = () => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={.7}
+                onPress={onSendMoneyPress}
                 style={styles.shortCutButon}>
                 <FontAwesomeIcon icon={faPaperPlane} color="#fff" size={20} />
                 <Text style={styles.shortCutButonText}>Gönder</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={.7}
+                onPress={onRequestMoneyPress}
                 style={styles.shortCutButon}>
                 <FontAwesomeIcon icon={faPlusCircle} color="#fff" size={20} />
                 <Text style={styles.shortCutButonText}>Talep Et</Text>

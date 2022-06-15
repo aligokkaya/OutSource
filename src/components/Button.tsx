@@ -4,16 +4,20 @@ import { TouchableOpacity, Text, TouchableOpacityProps, StyleSheet, ActivityIndi
 
 interface ButonProps extends TouchableOpacityProps {
     title: string,
+    invert?: boolean,
     icon?: any,
     iconProperty?: { size: number, color: string },
     loading?: boolean,
     textStyle?: any,
     butonStyle?: any,
 }
-const Button: React.FC<ButonProps> = ({ title, loading, icon, butonStyle, textStyle, iconProperty, ...rest }) => {
+const Button: React.FC<ButonProps> = ({ title, invert, loading, icon, butonStyle, textStyle, iconProperty, ...rest }) => {
     return (
         <TouchableOpacity
-            style={{ ...styles.buttonContainer, ...butonStyle }}
+            style={[
+                { ...styles.buttonContainer, ...butonStyle },
+                invert && styles.invert
+            ]}
             {...rest}>
             {
                 icon && <View style={{ paddingRight: 5 }}><FontAwesomeIcon icon={icon} size={iconProperty?.size} color={iconProperty?.color} /></View>
@@ -21,7 +25,10 @@ const Button: React.FC<ButonProps> = ({ title, loading, icon, butonStyle, textSt
             {
                 loading && <ActivityIndicator style={{ paddingRight: 10 }} />
             }
-            <Text style={{ ...styles.buttonText, ...textStyle }}>{title}</Text>
+            <Text style={[
+                { ...styles.buttonText, ...textStyle },
+                invert && styles.invertText
+            ]}>{title}</Text>
         </TouchableOpacity>
     )
 }
@@ -33,6 +40,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
+    },
+    invert: {
+        backgroundColor: '#3D21A2',
+    },
+    invertText: {
+        color: '#FAF6FE'
     },
     buttonText: {
         fontSize: 16,
