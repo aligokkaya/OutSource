@@ -1,7 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const FormElement = ({ style, children }) => (
+interface FormElementProps {
+    style?: any
+    children?: any
+}
+
+const FormElement = ({ style, children }: FormElementProps) => (
     <View style={[styles.container, style]}>
         {children}
     </View>
