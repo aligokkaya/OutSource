@@ -221,6 +221,10 @@ export const ShortCut = () => {
     const onWithdrawMoneyPress = () => {
         navigation.navigate('WithdrawMoney' as any)
     }
+    
+    const onDepositPress = () => {
+        navigation.navigate('NewFastTransaction' as any)
+    }
 
     return (
         <View style={styles.shortCutContainer}>
@@ -248,6 +252,7 @@ export const ShortCut = () => {
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={.7}
+                onPress={onDepositPress}
                 style={styles.shortCutButon}>
                 <FontAwesomeIcon icon={faPlusCircle} color="#fff" size={20} />
                 <Text style={styles.shortCutButonText}>Yatır</Text>

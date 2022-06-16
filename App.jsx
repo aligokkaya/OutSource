@@ -33,6 +33,8 @@ import QRRequestMoney from './src/screens/QRTransactions/QRRequestMoney';
 import QRRequestScan from './src/screens/QRTransactions/QRRequestScan';
 import QRRequestScanned from './src/screens/QRTransactions/QRRequestScanned';
 import QRPayment from './src/screens/QRTransactions/QRPayment';
+import NewFastTransaction from './src/screens/WithdrawMoney/NewFastTransaction';
+import FastTransaction from './src/screens/WithdrawMoney/FastTransaction';
 
 const Stack = createNativeStackNavigator();
 
@@ -77,6 +79,9 @@ const App = () => {
         <Stack.Screen name='QRRequestScan' component={QRRequestScan} />
         <Stack.Screen name='QRRequestScanned' component={QRRequestScanned} />
         <Stack.Screen name='QRPayment' component={QRPayment} />
+
+        <Stack.Screen name='NewFastTransaction' component={NewFastTransaction} />
+        <Stack.Screen name='FastTransaction' component={FastTransaction} />
       </Stack.Navigator>
     </NavigationContainer>
   );
