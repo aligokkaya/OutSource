@@ -190,7 +190,9 @@ const SendMoney = () => {
                   height: 28,
                   borderRadius: 28,
                   backgroundColor: 'red'
-                }} />
+                }} 
+                source={{uri: ''}}
+                />
                 <Text style={{
                   marginLeft: 5,
                   fontSize: 16,
@@ -243,7 +245,7 @@ const SendMoney = () => {
           justifyContent: 'space-between',
           marginTop: 30
         }}>
-          <Text style={[styles.title, { marginTop: null }]}>Tutar Bilgileri</Text>
+          <Text style={[styles.title, { marginTop: null as any }]}>Tutar Bilgileri</Text>
           <View style={{
             backgroundColor: '#E8FBD2',
             height: 25,
@@ -326,12 +328,13 @@ const SendMoney = () => {
 
         <CustomCheckbox
           style={{ marginTop: 30 }}
+          checkhed={false}
           text='Bu transferi hızlı işlemlere kaydet.'
         />
         <Button
           invert
           onPress={() => {
-            navigation.navigate('SendMoneySelected')
+            navigation.navigate('SendMoneySelected' as any)
           }}
           butonStyle={{
             marginVertical: 45

@@ -55,7 +55,7 @@ const SendMoneySuccess = () => {
                     invert
                     butonStyle={{ marginTop: 30, alignSelf: 'stretch' }}
                     onPress={() => {
-                        navigation.navigate('SendMoneySuccess')
+                        navigation.navigate('SendMoneySuccess' as any)
                     }}
                     title="Transferlere Dön" />
 

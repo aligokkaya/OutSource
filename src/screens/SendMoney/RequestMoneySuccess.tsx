@@ -62,14 +62,14 @@ const RequestMoneySuccess = () => {
                     invert
                     butonStyle={{ marginTop: 30, alignSelf: 'stretch' }}
                     onPress={() => {
-                        navigation.navigate('SendMoneySuccess')
+                        navigation.navigate('SendMoneySuccess' as any)
                     }}
                     title="Transferlere Dön" />
 
                 <Button
                     butonStyle={{ marginTop: 30, alignSelf: 'stretch' }}
                     onPress={() => {
-                        navigation.navigate('SendMoneySuccess')
+                        navigation.navigate('SendMoneySuccess' as any)
                     }}
                     title="Gelen Talepleri Gör" />
 

@@ -2,7 +2,14 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 
-const Background = ({ children, leftIcon, rightIcon, title }) => {
+interface BackgroundProps {
+    children?: any
+    leftIcon?: any
+    rightIcon?: any
+    title?: string
+}
+
+const Background = ({ children, leftIcon, rightIcon, title }: BackgroundProps) => {
     return (
         <ImageBackground style={{
             flex: 1

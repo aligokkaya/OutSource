@@ -185,7 +185,7 @@ const SendMoneySummary = () => {
                 <Button
                     invert
                     onPress={() => {
-                        navigation.navigate('SendMoneySuccess')
+                        navigation.navigate('SendMoneySuccess' as any)
                     }}
                     butonStyle={{
                         alignSelf: 'stretch',

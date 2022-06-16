@@ -9,7 +9,7 @@ import {
     View, TextInput, Text, StyleSheet, Platform
 } from 'react-native'
 
-export const KeyCode = (props) => {
+export const KeyCode = (props: any) => {
     const [inputValue, setInputValue] = React.useState(props.defaultValue)
     React.useEffect(() => {
         if (props.value !== undefined && props.value !== inputValue) {
@@ -24,7 +24,7 @@ export const KeyCode = (props) => {
         )
     }
 
-    const changeText = (value) => {
+    const changeText = (value: any) => {
         if (props.uppercase) {
             value = value.toUpperCase()
         }
@@ -79,7 +79,7 @@ export const KeyCode = (props) => {
                 style={[styles.input, { color: props.textColor, width: 42 * props.length }]}
                 autoFocus={props.autoFocus}
                 value={inputValue}
-                keyboardType={keyboardType}
+                keyboardType={keyboardType as any}
                 maxLength={props.length}
                 clearButtonMode='never'
                 textContentType='oneTimeCode'

@@ -98,7 +98,7 @@ const SendMoneySelected = () => {
           justifyContent: 'space-between',
           marginTop: 30
         }}>
-          <Text style={[styles.title, { marginTop: null }]}>Tutar Bilgileri</Text>
+          <Text style={[styles.title, { marginTop: null as any }]}>Tutar Bilgileri</Text>
           <View style={{
             backgroundColor: '#E8FBD2',
             height: 25,
@@ -200,7 +200,7 @@ const SendMoneySelected = () => {
         <Button
           invert
           onPress={() => {
-            navigation.navigate('SendMoneyFilled')
+            navigation.navigate('SendMoneyFilled' as any)
           }}
           butonStyle={{
             marginVertical: 45

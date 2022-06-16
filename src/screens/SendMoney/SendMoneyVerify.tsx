@@ -174,7 +174,7 @@ const SendMoneyVerify = () => {
                     <Button
                         invert
                         onPress={() => {
-                            navigation.navigate('SendMoneySummary')
+                            navigation.navigate('SendMoneySummary' as any)
                         }}
                         butonStyle={{
                             flex: 1,

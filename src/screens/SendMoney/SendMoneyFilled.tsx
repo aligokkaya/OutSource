@@ -78,7 +78,9 @@ const SendMoneyFilled = () => {
                     flexDirection: 'row'
                 }}>
                     <FormElement>
-                        <Image style={{
+                        <Image
+                        source={{uri:''}}
+                        style={{
                             width: 28,
                             height: 28,
                             borderRadius: 28,
@@ -143,7 +145,7 @@ const SendMoneyFilled = () => {
                     justifyContent: 'space-between',
                     marginTop: 30
                 }}>
-                    <Text style={[styles.title, { marginTop: null }]}>Tutar Bilgileri</Text>
+                    <Text style={[styles.title, { marginTop: null as any }]}>Tutar Bilgileri</Text>
                     <View style={{
                         backgroundColor: '#E8FBD2',
                         height: 25,
@@ -245,7 +247,7 @@ const SendMoneyFilled = () => {
                 <Button
                     invert
                     onPress={() => {
-                        navigation.navigate('SendMoneyVerify')
+                        navigation.navigate('SendMoneyVerify' as any)
                     }}
                     butonStyle={{
                         marginVertical: 45
