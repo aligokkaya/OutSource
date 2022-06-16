@@ -20,6 +20,19 @@ import RequestMoney from './src/screens/SendMoney/RequestMoney';
 import RequestMoneyFilled from './src/screens/SendMoney/RequestMoneyFilled';
 import RequestMoneySummary from './src/screens/SendMoney/RequestMoneySummary';
 import RequestMoneySuccess from './src/screens/SendMoney/RequestMoneySuccess';
+import WithdrawMoney from './src/screens/WithdrawMoney/WithdrawMoney';
+import CreateWithdrawRequest from './src/screens/WithdrawMoney/CreateWithdrawRequest';
+import WithdrawVerify from './src/screens/WithdrawMoney/WithdrawVerify';
+import WithdrawSummary from './src/screens/WithdrawMoney/WithdrawSummary';
+import WithdrawSuccess from './src/screens/WithdrawMoney/WithdrawSuccess';
+import QRTransactions from './src/screens/QRTransactions/QRTransactions';
+import YourQR from './src/screens/QRTransactions/YourQR';
+import SendMoneyWithQR from './src/screens/QRTransactions/SendMoneyWithQr';
+import QRScanned from './src/screens/QRTransactions/QRScanned';
+import QRRequestMoney from './src/screens/QRTransactions/QRRequestMoney';
+import QRRequestScan from './src/screens/QRTransactions/QRRequestScan';
+import QRRequestScanned from './src/screens/QRTransactions/QRRequestScanned';
+import QRPayment from './src/screens/QRTransactions/QRPayment';
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +62,21 @@ const App = () => {
         <Stack.Screen name='RequestMoneyFilled' component={RequestMoneyFilled} />
         <Stack.Screen name='RequestMoneySummary' component={RequestMoneySummary} />
         <Stack.Screen name='RequestMoneySuccess' component={RequestMoneySuccess} />
+
+        <Stack.Screen name='WithdrawMoney' component={WithdrawMoney} />
+        <Stack.Screen name='CreateWithdrawRequest' component={CreateWithdrawRequest} />
+        <Stack.Screen name='WithdrawVerify' component={WithdrawVerify} />
+        <Stack.Screen name='WithdrawSummary' component={WithdrawSummary} />
+        <Stack.Screen name='WithdrawSuccess' component={WithdrawSuccess} />
+
+        <Stack.Screen name='QRTransactions' component={QRTransactions} />
+        <Stack.Screen name='YourQR' component={YourQR} />
+        <Stack.Screen name='SendMoneyWithQR' component={SendMoneyWithQR} />
+        <Stack.Screen name='QRScanned' component={QRScanned} />
+        <Stack.Screen name='QRRequestMoney' component={QRRequestMoney} />
+        <Stack.Screen name='QRRequestScan' component={QRRequestScan} />
+        <Stack.Screen name='QRRequestScanned' component={QRRequestScanned} />
+        <Stack.Screen name='QRPayment' component={QRPayment} />
       </Stack.Navigator>
     </NavigationContainer>
   );

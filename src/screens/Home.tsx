@@ -211,18 +211,24 @@ export const ShortCut = () => {
     const navigation = useNavigation()
 
     const onSendMoneyPress = () => {
-        navigation.navigate('SendMoney')
+        navigation.navigate('SendMoney' as any)
     }
-
+    
     const onRequestMoneyPress = () => {
-        navigation.navigate('RequestMoney')
+        navigation.navigate('RequestMoney' as any)
+    }
+    
+    const onWithdrawMoneyPress = () => {
+        navigation.navigate('WithdrawMoney' as any)
     }
 
     return (
         <View style={styles.shortCutContainer}>
             <TouchableOpacity
                 activeOpacity={.7}
-                style={styles.shortCutButon}>
+                style={styles.shortCutButon}
+                onPress={onWithdrawMoneyPress}
+                >
                 <FontAwesomeIcon icon={faCircleMinus} color="#fff" size={20} />
                 <Text style={styles.shortCutButonText}>Çek</Text>
             </TouchableOpacity>
