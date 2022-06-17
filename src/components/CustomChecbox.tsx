@@ -8,10 +8,14 @@ interface CheckboxProps extends TouchableOpacityProps {
     text: string
     style: any
 }
-const CustomCheckbox: React.FC<CheckboxProps> = ({ checkhed, text, style, ...res }) => {
+const CustomCheckbox: React.FC<CheckboxProps> = ({ text, style, ...res }) => {
+    const [checkhed, setChecked] = React.useState(false)
+
     return (
         <View style={[styles.container, style]} {...res}>
-            <TouchableOpacity {...res} style={{ ...styles.checkBox, backgroundColor: checkhed ? "#3D21A2" : "#fff" }} >
+            <TouchableOpacity {...res}
+            onPress={() => setChecked(prev => !prev)}
+            style={{ ...styles.checkBox, backgroundColor: checkhed ? "#3D21A2" : "#fff" }} >
                 {
                     checkhed && <FontAwesomeIcon icon={faCheck} color="#fff" />
                 }

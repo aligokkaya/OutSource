@@ -34,6 +34,7 @@ const Button: React.FC<ButonProps> = ({ title, invert, loading, icon, butonStyle
 }
 const styles = StyleSheet.create({
     buttonContainer: {
+        zIndex: -1,
         backgroundColor: '#FAF6FE',
         height: 50,
         borderRadius: 10,

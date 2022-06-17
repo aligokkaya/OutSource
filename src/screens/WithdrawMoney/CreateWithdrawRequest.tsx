@@ -9,6 +9,7 @@ import FormElement from '../../components/FormElement';
 
 import { useNavigation } from '@react-navigation/native';
 import Background from '../SendMoney/Background';
+import NewDropdown from '../Deposit/NewDropdown';
 
 const persons = [
   {
@@ -284,10 +285,9 @@ const CreateWithdrawRequest = () => {
         </View>
 
 
-        <FormElement style={{
+        <NewDropdown data={['TRY', 'USD', 'EUR']} elementStyle={{
           flex: 1,
-          alignItems: 'center',
-          justifyContent: 'flex-start',
+          alignItems: 'center', justifyContent: 'flex-start'
         }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{
@@ -325,7 +325,7 @@ const CreateWithdrawRequest = () => {
               value='890.00'
             />
           </View>
-        </FormElement>
+        </NewDropdown>
 
         <CustomCheckbox
           style={{ marginTop: 30 }}
@@ -349,6 +349,7 @@ export default CreateWithdrawRequest;
 
 const styles = StyleSheet.create({
   title: {
+    zIndex: -1,
     fontSize: 18,
     color: '#141414',
     fontWeight: '500',

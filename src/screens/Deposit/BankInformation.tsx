@@ -7,6 +7,7 @@ import DoubleButtonContainer from '../../components/DoubleButtonContainer'
 import { useNavigation } from '@react-navigation/native'
 import FormElement from '../../components/FormElement'
 import Button from '../../components/Button'
+import NewDropdown from './NewDropdown'
 
 const BankInformation = () => {
     const [selectedMenu, setSelectedMenu] = React.useState(0)
@@ -29,11 +30,7 @@ const BankInformation = () => {
                     option2Text={'Kart ile'}
                 />
                 <Text style={styles.title}>Banka Seçimi</Text>
-                <FormElement
-                    icon={faChevronDown}
-                    childrenStyle={{
-                        paddingTop: 5
-                    }}>
+                <NewDropdown data={['Garanti', 'Ziraat']}>
                     <View>
                         <Text style={{
                             color: '#3D21A2',
@@ -41,7 +38,7 @@ const BankInformation = () => {
                             lineHeight: 12,
                             fontWeight: '500',
                         }}>Kurum Seçimi</Text>
-                        <TextInput
+                        <Text
                             style={{
                                 fontSize: 17,
                                 lineHeight: 17,
@@ -49,11 +46,9 @@ const BankInformation = () => {
                                 color: '#141414',
                                 padding: 0,
                                 margin: 0
-                            }}
-                            value='Garanti BBVA'
-                        />
+                            }}>Garanti BBVA</Text>
                     </View>
-                </FormElement>
+                </NewDropdown>
                 <Text style={styles.title}>Para Yatırma Bilgileri</Text>
 
                 <FormElement style={{
@@ -215,10 +210,11 @@ const BankInformation = () => {
 export default BankInformation
 
 const styles = StyleSheet.create({
-    title: {
+    title: { 
+        zIndex : -1,
         fontSize: 18,
         color: '#141414',
         fontWeight: '500',
-        marginTop: 30
+        marginTop: 30,
     }
 })

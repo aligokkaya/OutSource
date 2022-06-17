@@ -206,7 +206,7 @@ const SendMoneySummary = () => {
 export default SendMoneySummary;
 
 const styles = StyleSheet.create({
-    title: {
+    title: { zIndex : -1,
         fontSize: 18,
         color: '#141414',
         fontWeight: '500',

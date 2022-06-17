@@ -10,6 +10,7 @@ import FormElement from '../../components/FormElement';
 import { useNavigation } from '@react-navigation/native';
 import Background from '../SendMoney/Background';
 import DoubleButtonContainer from '../../components/DoubleButtonContainer';
+import NewDropdown from './NewDropdown';
 
 const persons = [
     {
@@ -319,10 +320,8 @@ const Deposit = () => {
                 </View>
 
 
-                <FormElement style={{
-                    flex: 1,
-                    alignItems: 'center',
-                    justifyContent: 'flex-start',
+                <NewDropdown data={['TRY', 'USD', 'EUR']} elementStyle={{
+                    flex: 1, alignItems: 'center', justifyContent: 'flex-start'
                 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{
@@ -360,7 +359,7 @@ const Deposit = () => {
                             value='890.00'
                         />
                     </View>
-                </FormElement>
+                </NewDropdown>
 
                 <CustomCheckbox
                     style={{ marginTop: 30 }}
@@ -388,7 +387,7 @@ const Deposit = () => {
 export default Deposit;
 
 const styles = StyleSheet.create({
-    title: {
+    title: { zIndex : -1,
         fontSize: 18,
         color: '#141414',
         fontWeight: '500',

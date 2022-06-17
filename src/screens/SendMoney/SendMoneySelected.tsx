@@ -8,6 +8,7 @@ import FormElement from '../../components/FormElement';
 
 import { useNavigation } from '@react-navigation/native';
 import Background from './Background';
+import NewDropdown from '../Deposit/NewDropdown';
 
 const SendMoneySelected = () => {
   const navigation = useNavigation()
@@ -116,10 +117,9 @@ const SendMoneySelected = () => {
         </View>
 
 
-        <FormElement style={{
+        <NewDropdown data={['TRY', 'USD', 'EUR']} elementStyle={{
           flex: 1,
-          alignItems: 'center',
-          justifyContent: 'flex-start',
+          alignItems: 'center', justifyContent: 'flex-start'
         }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
             <Text style={{
@@ -157,7 +157,7 @@ const SendMoneySelected = () => {
               value='890.00'
             />
           </View>
-        </FormElement>
+        </NewDropdown>
 
         <Text style={styles.title}>Açıklama</Text>
 
@@ -214,6 +214,7 @@ export default SendMoneySelected;
 
 const styles = StyleSheet.create({
   title: {
+    zIndex: -1,
     fontSize: 18,
     color: '#141414',
     fontWeight: '500',

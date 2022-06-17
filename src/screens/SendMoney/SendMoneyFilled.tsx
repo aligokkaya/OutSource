@@ -12,6 +12,7 @@ import FormElement from '../../components/FormElement';
 
 import { useNavigation } from '@react-navigation/native';
 import Background from './Background';
+import NewDropdown from '../Deposit/NewDropdown';
 
 const SendMoneyFilled = () => {
     const navigation = useNavigation()
@@ -77,26 +78,28 @@ const SendMoneyFilled = () => {
                 <View style={{
                     flexDirection: 'row'
                 }}>
-                    <FormElement>
-                        <Image
-                        source={{uri:''}}
-                        style={{
-                            width: 28,
-                            height: 28,
-                            borderRadius: 28,
-                            backgroundColor: 'red'
-                        }} />
-                        <Text style={{
-                            marginLeft: 5,
-                            fontSize: 16,
-                            fontWeight: 'bold',
-                            color: '#141414'
-                        }}>+90</Text>
+                    <NewDropdown data={['+90', '+1', '+77']}>
+                        <>
+                            <Image
+                                source={{ uri: '' }}
+                                style={{
+                                    width: 28,
+                                    height: 28,
+                                    borderRadius: 28,
+                                    backgroundColor: 'red'
+                                }} />
+                            <Text style={{
+                                marginLeft: 5,
+                                fontSize: 16,
+                                fontWeight: 'bold',
+                                color: '#141414'
+                            }}>+90</Text>
 
-                        <FontAwesomeIcon icon={faChevronDown} color="#3D21A2" size={15} style={{
-                            marginLeft: 8
-                        }} />
-                    </FormElement>
+                            <FontAwesomeIcon icon={faChevronDown} color="#3D21A2" size={15} style={{
+                                marginLeft: 8
+                            }} />
+                        </>
+                    </NewDropdown>
 
                     <FormElement style={{
                         marginLeft: 15, flex: 1, flexDirection: 'column',
@@ -163,10 +166,8 @@ const SendMoneyFilled = () => {
                 </View>
 
 
-                <FormElement style={{
-                    flex: 1,
-                    alignItems: 'center',
-                    justifyContent: 'flex-start',
+                <NewDropdown data={['TRY', 'USD', 'EUR']} elementStyle={{
+                    flex: 1, alignItems: 'center', justifyContent: 'flex-start'
                 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{
@@ -204,7 +205,7 @@ const SendMoneyFilled = () => {
                             value='890.00'
                         />
                     </View>
-                </FormElement>
+                </NewDropdown>
 
                 <Text style={styles.title}>Açıklama</Text>
 
@@ -261,6 +262,7 @@ export default SendMoneyFilled;
 
 const styles = StyleSheet.create({
     title: {
+        zIndex: -1,
         fontSize: 18,
         color: '#141414',
         fontWeight: '500',

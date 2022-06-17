@@ -8,6 +8,7 @@ import FormElement from '../../components/FormElement';
 
 import { useNavigation } from '@react-navigation/native';
 import Background from '../SendMoney/Background';
+import NewDropdown from '../Deposit/NewDropdown';
 
 const QRScanned = () => {
     const navigation = useNavigation()
@@ -72,9 +73,8 @@ const QRScanned = () => {
                 </View>
 
 
-                <FormElement style={{
-                    alignItems: 'center',
-                    justifyContent: 'flex-start',
+                <NewDropdown data={['TRY', 'USD', 'EUR']} elementStyle={{
+                    alignItems: 'center', justifyContent: 'flex-start'
                 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                         <Text style={{
@@ -112,7 +112,7 @@ const QRScanned = () => {
                             value='890.00'
                         />
                     </View>
-                </FormElement>
+                </NewDropdown>
 
                 <Text style={styles.title}>Açıklama</Text>
 
@@ -151,7 +151,7 @@ const QRScanned = () => {
 export default QRScanned;
 
 const styles = StyleSheet.create({
-    title: {
+    title: { zIndex : -1,
         fontSize: 18,
         color: '#141414',
         fontWeight: '500',
