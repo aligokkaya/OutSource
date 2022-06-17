@@ -10,7 +10,6 @@ import QuickProcess, { QuickProcessHeader } from '../components/QuickProcess'
 import LastAction from '../components/LastAction'
 import MyCards from '../components/MyCards'
 import BottomSheet, { BottomSheetScrollView, BottomSheetView } from '@gorhom/bottom-sheet'
-import { useNavigation } from '@react-navigation/native'
 //#region style
 const styles = StyleSheet.create({
     notFoundCardInfoContainer: {
@@ -154,6 +153,7 @@ export default function Home(props: any) {
                             <BalanceInfo balance={"1.136,97"} body="TOPLAM BAKİYE" />
                             <ShortCut />
                             <MyCards />
+                            
                         </View>
                         :
                         <>
@@ -208,51 +208,28 @@ export default function Home(props: any) {
     )
 }
 export const ShortCut = () => {
-    const navigation = useNavigation()
-
-    const onSendMoneyPress = () => {
-        navigation.navigate('SendMoney' as any)
-    }
-    
-    const onRequestMoneyPress = () => {
-        navigation.navigate('RequestMoney' as any)
-    }
-    
-    const onWithdrawMoneyPress = () => {
-        navigation.navigate('WithdrawMoney' as any)
-    }
-    
-    const onDepositPress = () => {
-        navigation.navigate('Deposit' as any)
-    }
-
     return (
         <View style={styles.shortCutContainer}>
             <TouchableOpacity
                 activeOpacity={.7}
-                style={styles.shortCutButon}
-                onPress={onWithdrawMoneyPress}
-                >
+                style={styles.shortCutButon}>
                 <FontAwesomeIcon icon={faCircleMinus} color="#fff" size={20} />
                 <Text style={styles.shortCutButonText}>Çek</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={.7}
-                onPress={onSendMoneyPress}
                 style={styles.shortCutButon}>
                 <FontAwesomeIcon icon={faPaperPlane} color="#fff" size={20} />
                 <Text style={styles.shortCutButonText}>Gönder</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={.7}
-                onPress={onRequestMoneyPress}
                 style={styles.shortCutButon}>
                 <FontAwesomeIcon icon={faPlusCircle} color="#fff" size={20} />
                 <Text style={styles.shortCutButonText}>Talep Et</Text>
             </TouchableOpacity>
             <TouchableOpacity
                 activeOpacity={.7}
-                onPress={onDepositPress}
                 style={styles.shortCutButon}>
                 <FontAwesomeIcon icon={faPlusCircle} color="#fff" size={20} />
                 <Text style={styles.shortCutButonText}>Yatır</Text>
