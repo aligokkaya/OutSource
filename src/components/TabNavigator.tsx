@@ -5,9 +5,9 @@ import { faCreditCard, faDiagramNext, faHome, faMessage, faMoneyBillTransfer } f
 
 import Home from '../screens/Home';
 import Share from '../screens/Share';
-import Message from '../screens/Message';
 import Cards from '../screens/Cards';
 import Transfer from '../screens/Transfer';
+import Messages from '../screens/Messages/Messages';
 
 
 const Tab = createBottomTabNavigator();
@@ -63,7 +63,7 @@ export default function TabNavigator() {
                             :
                             <FontAwesomeIcon size={20} color='#39219D' icon={faMessage} />
                 }}
-                component={Message} />
+                component={Messages} />
             <Tab.Screen name="Kartlar"
                 options={{
                     headerShown: false,

@@ -6,12 +6,14 @@ import { useNavigation } from '@react-navigation/native'
 
 interface BackgroundProps {
     children?: any
+    customTitle?: any
     leftIcon?: any
     rightIcon?: any
     title?: string
+    onRightPress?: any
 }
 
-const Background = ({ children, leftIcon, rightIcon, title }: BackgroundProps) => {
+const Background = ({ children, leftIcon, rightIcon, title, customTitle, onRightPress }: BackgroundProps) => {
     const insets = useSafeAreaInsets()
     const navigation = useNavigation()
 
@@ -38,15 +40,20 @@ const Background = ({ children, leftIcon, rightIcon, title }: BackgroundProps) =
                         <View />
                     )
                 }
-                <Text style={{
-                    fontSize: 16,
-                    fontWeight: '500',
-                    color: '#FFF'
-                }}>{title}</Text>
-
+                {
+                    customTitle ? customTitle : (
+                        <Text style={{
+                            fontSize: 16,
+                            fontWeight: '500',
+                            color: '#FFF'
+                        }}>{title}</Text>
+                    )
+                }
                 {
                     rightIcon ? (
-                        <FontAwesomeIcon icon={rightIcon} color="#FFF" size={25} />
+                        <TouchableOpacity onPress={onRightPress}>
+                            <FontAwesomeIcon icon={rightIcon} color="#FFF" size={25} />
+                        </TouchableOpacity>
                     ) : (
                         <View />
                     )
