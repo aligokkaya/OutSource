@@ -29,7 +29,8 @@ const CustomCheckbox: React.FC<CheckboxProps> = ({ text, style, ...res }) => {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: -1
     },
     checkBox: {
         width: 25, 
