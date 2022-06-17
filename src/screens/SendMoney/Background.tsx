@@ -1,6 +1,8 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { useNavigation } from '@react-navigation/native'
 
 interface BackgroundProps {
     children?: any
@@ -10,12 +12,16 @@ interface BackgroundProps {
 }
 
 const Background = ({ children, leftIcon, rightIcon, title }: BackgroundProps) => {
+    const insets = useSafeAreaInsets()
+    const navigation = useNavigation()
+
     return (
         <ImageBackground style={{
             flex: 1
         }}
             source={require('../../../images/bg.png')}>
             <View style={{
+                marginTop: insets.top,
                 height: 44,
                 marginBottom: 10,
                 paddingHorizontal: 20,
@@ -25,7 +31,9 @@ const Background = ({ children, leftIcon, rightIcon, title }: BackgroundProps) =
             }}>
                 {
                     leftIcon ? (
-                        <FontAwesomeIcon icon={leftIcon} color="#FFF" size={25} />
+                        <TouchableOpacity onPress={navigation.goBack}>
+                            <FontAwesomeIcon icon={leftIcon} color="#FFF" size={25} />
+                        </TouchableOpacity>
                     ) : (
                         <View />
                     )
