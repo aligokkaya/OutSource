@@ -147,6 +147,7 @@ export default function Home(props: any) {
                 goAccount={() => props.navigation.navigate('Accounts')}
                 goNotification={() => props.navigation.navigate('Notification')}
             />
+            <TouchableOpacity onPress={()=>props.navigation.navigate('Beginner')}><Text style={{color:'white'}}>Profile</Text></TouchableOpacity>
             <ScrollView contentContainerStyle={{ flex: 1 }} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
                 {
                     isItVerifed ?
