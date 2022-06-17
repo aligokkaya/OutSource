@@ -223,7 +223,7 @@ export const ShortCut = () => {
     }
     
     const onDepositPress = () => {
-        navigation.navigate('NewFastTransaction' as any)
+        navigation.navigate('Deposit' as any)
     }
 
     return (

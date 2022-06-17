@@ -55,7 +55,7 @@ export const KeyCode = (props: any) => {
             const active = i === inputValue.length
 
             elements.push(
-                <View style={[styles.box, active && styles.boxActive]} key={i}>
+                <View style={[styles.box, i < inputValue.length && styles.boxActive]} key={i}>
                     <Text style={styles.text}>{vals[i] || ''}</Text>
                 </View>
             )

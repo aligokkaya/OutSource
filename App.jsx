@@ -35,6 +35,13 @@ import QRRequestScanned from './src/screens/QRTransactions/QRRequestScanned';
 import QRPayment from './src/screens/QRTransactions/QRPayment';
 import NewFastTransaction from './src/screens/WithdrawMoney/NewFastTransaction';
 import FastTransaction from './src/screens/WithdrawMoney/FastTransaction';
+import Deposit from './src/screens/Deposit/Deposit';
+import DepositAccount from './src/screens/Deposit/DepositAccount';
+import DepositTargetAccount from './src/screens/Deposit/DepositTargetAccount';
+import DepositSummary from './src/screens/Deposit/DepositSummary';
+import DepositSuccess from './src/screens/Deposit/DepositSuccess';
+import DepositSelectBank from './src/screens/Deposit/DepositSelectBank';
+import BankInformation from './src/screens/Deposit/BankInformation';
 
 const Stack = createNativeStackNavigator();
 
@@ -82,6 +89,14 @@ const App = () => {
 
         <Stack.Screen name='NewFastTransaction' component={NewFastTransaction} />
         <Stack.Screen name='FastTransaction' component={FastTransaction} />
+
+        <Stack.Screen name='Deposit' component={Deposit} />
+        <Stack.Screen name='DepositAccount' component={DepositAccount} />
+        <Stack.Screen name='DepositTargetAccount' component={DepositTargetAccount} />
+        <Stack.Screen name='DepositSummary' component={DepositSummary} />
+        <Stack.Screen name='DepositSuccess' component={DepositSuccess} />
+        <Stack.Screen name='DepositSelectBank' component={DepositSelectBank} />
+        <Stack.Screen name='BankInformation' component={BankInformation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
