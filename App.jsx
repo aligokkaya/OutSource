@@ -53,6 +53,9 @@ import CreateNewGroupChat from './src/screens/Messages/CreateNewGroupChat';
 import PayShareBill from './src/screens/Messages/PayShareBill';
 import Beginner from './src/screens/Profile/Beginner';
 import Advanced from './src/screens/Profile/Advanced';
+import Settings from './src/screens/Profile/Settings';
+import PersonelInformation from './src/screens/Profile/PersonalInformation';
+import NotificationSettings from './src/screens/Profile/NotificationSettings';
 
 const Stack = createNativeStackNavigator();
 
@@ -121,6 +124,9 @@ const App = () => {
 
           <Stack.Screen name='Beginner' component={Beginner} />
           <Stack.Screen name='Advanced' component={Advanced} />
+          <Stack.Screen name="Settings" component={Settings}/>
+          <Stack.Screen name="PersonelInformation" component={PersonelInformation}/>
+          <Stack.Screen name="NotificationSettings" component={NotificationSettings}/>
 
 
         </Stack.Navigator>
