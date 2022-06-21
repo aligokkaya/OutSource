@@ -83,7 +83,7 @@ export const KeyCode = (props: any) => {
                 maxLength={props.length}
                 clearButtonMode='never'
                 textContentType='oneTimeCode'
-                returnKeyType='done'
+                returnKeyType='next'
                 underlineColorAndroid='transparent'
                 onChangeText={changeText}
                 caretHidden />
