@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { SafeAreaView, StyleSheet, View, TextInput, Text, TouchableOpacity, ScrollView } from "react-native";
-import BackgroundContainer from "../../components/BackgroundContainer";
-import Container from "../../components/Container";
-import MainHeader from "../../components/MainHeader";
+import BackgroundContainer from "../../../components/BackgroundContainer";
+import Container from "../../../components/Container";
+import MainHeader from "../../../components/MainHeader";
 import DatePicker from 'react-native-date-picker'
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCalendarDays, faCheck } from "@fortawesome/free-solid-svg-icons";
 import dayjs from 'dayjs'
 import { Dropdown } from 'react-native-element-dropdown';
 import SimpleGradientProgressbarView from "react-native-simple-gradient-progressbar-view";
-import Button from "../../components/Button";
+import Button from "../../../components/Button";
 
 const customParseFormat = require('dayjs/plugin/customParseFormat')
 dayjs.extend(customParseFormat)

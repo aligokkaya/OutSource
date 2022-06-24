@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, TextInput, View, Text, Switch, TouchableOpacity } from "react-native";
-import BackgroundContainer from "../../components/BackgroundContainer";
-import Container from "../../components/Container";
-import MainHeader from "../../components/MainHeader";
+import BackgroundContainer from "../../../components/BackgroundContainer";
+import Container from "../../../components/Container";
+import MainHeader from "../../../components/MainHeader";
 
 const NotificationSettings = (props: any) => {
     const [switchStatus, setSwitchStatus] = useState({
