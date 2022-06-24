@@ -3,9 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import React from 'react'
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import BackgroundContainer from '../../components/BackgroundContainer'
-import Container from '../../components/Container'
-import MainHeader from '../../components/MainHeader'
+import BackgroundContainer from '../../../components/BackgroundContainer'
+import Container from '../../../components/Container'
+import MainHeader from '../../../components/MainHeader'
 
 
 
@@ -57,7 +57,7 @@ export default function Settings(props: any) {
                                 <FontAwesomeIcon icon={faLock} size={26} color="#380796" />
                                 <View style={styles.textView} ><Text style={styles.text}>Şifre Yenile</Text>
                                 </View>
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={()=>props.navigation.navigate('ResetPassword')}>
                                     <FontAwesomeIcon icon={faAngleRight} size={24} color="#9a9a9a" />
                                 </TouchableOpacity>
                             </View>

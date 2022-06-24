@@ -53,9 +53,12 @@ import CreateNewGroupChat from './src/screens/Messages/CreateNewGroupChat';
 import PayShareBill from './src/screens/Messages/PayShareBill';
 import Beginner from './src/screens/Profile/Beginner';
 import Advanced from './src/screens/Profile/Advanced';
-import Settings from './src/screens/Profile/Settings';
-import PersonelInformation from './src/screens/Profile/PersonalInformation';
-import NotificationSettings from './src/screens/Profile/NotificationSettings';
+import Settings from './src/screens/Profile/Settings/Settings';
+import PersonelInformation from './src/screens/Profile/Settings/PersonalInformation';
+import NotificationSettings from './src/screens/Profile/Settings/NotificationSettings';
+import ResetPasswordStep3 from './src/screens/Profile/ResetPassword/ResetPasswordStep3';
+import ResetPasswordStep2 from './src/screens/Profile/ResetPassword/ResetPasswordStep2';
+import ResetPasswordStep1 from './src/screens/Profile/ResetPassword/ResetPasswordStep1';
 
 const Stack = createNativeStackNavigator();
 
@@ -127,6 +130,9 @@ const App = () => {
           <Stack.Screen name="Settings" component={Settings}/>
           <Stack.Screen name="PersonelInformation" component={PersonelInformation}/>
           <Stack.Screen name="NotificationSettings" component={NotificationSettings}/>
+          <Stack.Screen name="ResetPasswordStep1" component={ResetPasswordStep1}/>
+          <Stack.Screen name="ResetPasswordStep2" component={ResetPasswordStep2}/>
+          <Stack.Screen name="ResetPasswordStep3" component={ResetPasswordStep3}/>
 
 
         </Stack.Navigator>

@@ -9,6 +9,7 @@ import { faCalendarDays, faCheck } from "@fortawesome/free-solid-svg-icons";
 import dayjs from 'dayjs'
 import { Dropdown } from 'react-native-element-dropdown';
 import SimpleGradientProgressbarView from "react-native-simple-gradient-progressbar-view";
+import Button from "../../components/Button";
 
 const customParseFormat = require('dayjs/plugin/customParseFormat')
 dayjs.extend(customParseFormat)
@@ -61,6 +62,11 @@ const PersonelInformation = (props: any) => {
     const [isFocus, setIsFocus] = React.useState({
         job: false,
         question: false,
+        name: false,
+        surname: false,
+        mail: false,
+        identityNo: false,
+        bDate: false
     })
     const [inputValue, setInputValue] = React.useState<input>({
         name: '',
@@ -109,14 +115,14 @@ const PersonelInformation = (props: any) => {
                                         progress={inputValue.count}
                                         cornerRadius={10}
                                     />
-                                    <View style={styles.progress}>
+                                    {inputValue.count > 0 ? <View style={styles.progress}>
                                         <Text style={{
                                             alignSelf: inputValue.count == 0 ?
                                                 "flex-start" : inputValue.count == 0.5 ?
                                                     "center" : inputValue.count == 1 ? "flex-end" : "baseline",
                                             fontSize: 16, color: '#000', fontWeight: 'bold'
                                         }}>%{(inputValue.count * 100)}</Text>
-                                    </View>
+                                    </View> : null}
                                 </View>
                                 : <View style={styles.view}>
                                     < View style={styles.icon}>
@@ -127,11 +133,13 @@ const PersonelInformation = (props: any) => {
                             }
                         </View>
                         <View style={styles.viewInput}>
-                            <Text style={styles.inputLabel}>Ad</Text>
+                            {isFocus.name ? <Text style={styles.inputLabel}>Ad</Text> : null}
                             <TextInput
                                 style={styles.input}
                                 onChangeText={text => setInputValue(prevState => ({ ...prevState, name: text }))}
                                 value={inputValue.name}
+                                onFocus={() => setIsFocus(prevState => ({ ...prevState, name: true }))}
+                                onBlur={() => setIsFocus(prevState => ({ ...prevState, name: false }))}
                                 placeholder="Adınız"
                                 onEndEditing={() =>
                                     setInputValue(prevState => ({ ...prevState, count: inputValue.count + 0.1 }))
@@ -140,11 +148,13 @@ const PersonelInformation = (props: any) => {
                             />
                         </View>
                         <View style={styles.viewInput}>
-                            <Text style={styles.inputLabel}>Soyad</Text>
+                            {isFocus.surname ? <Text style={styles.inputLabel}>Soyad</Text> : null}
                             <TextInput
                                 style={styles.input}
                                 onChangeText={text => setInputValue(prevState => ({ ...prevState, surname: text }))}
                                 value={inputValue.surname}
+                                onFocus={() => setIsFocus(prevState => ({ ...prevState, surname: true }))}
+                                onBlur={() => setIsFocus(prevState => ({ ...prevState, surname: false }))}
                                 placeholder="Soyadınız"
                                 onEndEditing={() =>
                                     setInputValue(prevState => ({ ...prevState, count: inputValue.count + 0.1 }))
@@ -152,11 +162,13 @@ const PersonelInformation = (props: any) => {
                             />
                         </View>
                         <View style={styles.viewInput}>
-                            <Text style={styles.inputLabel}>E-posta</Text>
+                            {isFocus.mail ? <Text style={styles.inputLabel}>E-posta</Text> : null}
                             <TextInput
                                 style={styles.input}
                                 onChangeText={text => setInputValue(prevState => ({ ...prevState, email: text }))}
                                 value={inputValue.email}
+                                onFocus={() => setIsFocus(prevState => ({ ...prevState, mail: true }))}
+                                onBlur={() => setIsFocus(prevState => ({ ...prevState, mail: false }))}
                                 keyboardType={'email-address'}
                                 placeholder="E-Posta"
                                 onEndEditing={() =>
@@ -165,12 +177,14 @@ const PersonelInformation = (props: any) => {
                             />
                         </View>
                         <View style={styles.viewInput}>
-                            <Text style={styles.inputLabel}>TC Kimlik No</Text>
+                            {isFocus.identityNo ? <Text style={styles.inputLabel}>TC Kimlik No</Text> : null}
                             <TextInput
                                 style={styles.input}
                                 onChangeText={text => setInputValue(prevState => ({ ...prevState, identityNo: text }))}
                                 value={inputValue.identityNo}
                                 keyboardType={'numeric'}
+                                onFocus={() => setIsFocus(prevState => ({ ...prevState, identityNo: true }))}
+                                onBlur={() => setIsFocus(prevState => ({ ...prevState, identityNo: false }))}
                                 placeholder="TC Kimlik Numarası"
                                 onEndEditing={() =>
                                     setInputValue(prevState => ({ ...prevState, count: inputValue.count + 0.1 }))
@@ -178,7 +192,7 @@ const PersonelInformation = (props: any) => {
                             />
                         </View>
                         <View style={styles.viewInput}>
-                            <Text style={styles.inputLabel}>Doğum Yılı</Text>
+                            {inputValue.date ? <Text style={styles.inputLabel}>Doğum Yılı</Text> : null}
                             <View style={styles.rowView}>
                                 <TextInput
                                     style={styles.input}
@@ -186,13 +200,15 @@ const PersonelInformation = (props: any) => {
                                     value={dayjs(inputValue.date).format('DD.MM.YYYY')}
                                     placeholder="Doğum Tarihi"
                                     editable={false}
+                                    onFocus={() => setIsFocus(prevState => ({ ...prevState, bDate: true }))}
+                                    onBlur={() => setIsFocus(prevState => ({ ...prevState, bDate: false }))}
                                     onEndEditing={() =>
                                         setInputValue(prevState => ({ ...prevState, count: inputValue.count + 0.1 }))
                                     } />
-                                <TouchableOpacity style={{ marginBottom: 10 }} onPress={() => {
+                                <TouchableOpacity onPress={() => {
                                     setOpen(true)
                                 }}>
-                                    <FontAwesomeIcon icon={faCalendarDays} color='#380796' size={30} />
+                                    <FontAwesomeIcon icon={faCalendarDays} color='#380796' size={26} />
                                 </TouchableOpacity>
                             </View>
                             <DatePicker
@@ -218,7 +234,7 @@ const PersonelInformation = (props: any) => {
 
                         </View>
                         <View style={styles.viewInput}>
-                            <Text style={styles.inputLabel}>Meslek Grubu</Text>
+                            {inputValue.job ? <Text style={styles.inputLabel}>Meslek Grubu</Text> : null}
                             <Dropdown
                                 style={[styles.dropDown, isFocus.job && { borderColor: '#380796' }]}
                                 iconStyle={styles.iconMargin}
@@ -226,7 +242,7 @@ const PersonelInformation = (props: any) => {
                                 maxHeight={300}
                                 labelField="label"
                                 valueField="value"
-                                placeholder=""
+                                placeholder="Meslek Grubu"
                                 value={inputValue.job}
                                 onFocus={() => setIsFocus(prevState => ({ ...prevState, job: true }))}
                                 onBlur={() => setIsFocus(prevState => ({ ...prevState, job: false }))}
@@ -241,7 +257,7 @@ const PersonelInformation = (props: any) => {
                         </View>
                         <Text style={styles.text}>Hesap Güvenliği</Text>
                         <View style={styles.viewInput}>
-                            <Text style={styles.inputLabel}>Hesap Kurtarma Sorusu</Text>
+                            {inputValue.question ? <Text style={styles.inputLabel}>Hesap Kurtarma Sorusu</Text> : null}
                             <Dropdown
                                 style={[styles.dropDown, isFocus.question && { borderColor: '#380796' }]}
                                 iconStyle={styles.iconMargin}
@@ -249,7 +265,7 @@ const PersonelInformation = (props: any) => {
                                 maxHeight={300}
                                 labelField="label"
                                 valueField="value"
-                                placeholder=""
+                                placeholder="Hesap Kurtarma Sorusu"
                                 value={inputValue.question}
                                 onFocus={() => setIsFocus(prevState => ({ ...prevState, question: true }))}
                                 onBlur={() => setIsFocus(prevState => ({ ...prevState, question: false }))}
@@ -274,12 +290,21 @@ const PersonelInformation = (props: any) => {
                                     placeholder="Hesap Kurtarma Sorusunun Cevabı"
                                 />
                             </View> : null}
-                        <TouchableOpacity style={styles.firstButton}>
+                        {/* <TouchableOpacity style={styles.firstButton}>
                             <Text style={styles.firstButtonText}>Değişiklikleri Kaydet</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.secondButton}>
                             <Text style={styles.secondButtonText}>Vazgeç</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
+
+                        <Button
+                            invert
+                            butonStyle={styles.secondButton} title="Değişiklikleri Kaydet" />
+                        <Button
+                            onPress={() => {
+                            }}
+                            butonStyle={styles.firstButton} title="Vazgeç" />
+
                     </Container>
                 </ScrollView>
             </SafeAreaView>
@@ -294,15 +319,13 @@ const styles = StyleSheet.create({
     dropDown: { marginHorizontal: 5, fontSize: 14 },
     text: { fontSize: 16, color: '#000', fontWeight: 'bold', marginBottom: 10, marginTop: 20 },
     iconMargin: { marginRight: 5 },
-    firstButton: { backgroundColor: '#380796', marginTop: 5, marginBottom: 15, height: 50, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
-    firstButtonText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
-    secondButton: { backgroundColor: '#DED6EE', marginBottom: 15, height: 50, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
-    secondButtonText: { color: '#380796', fontSize: 16, fontWeight: 'bold' },
+    firstButton: { marginTop: 5, marginBottom: 15, height: 50, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
+    secondButton: { marginVertical: 15, height: 50, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
     progressText: { fontSize: 16, color: '#000', fontWeight: 'bold', marginBottom: 10, marginTop: 20, alignSelf: 'center' },
     progress: { width: 40, height: 20 },
-    progressText2: { fontSize: 16, color: '#48BF24', fontWeight: 'bold', marginHorizontal:5 },
-    view:{flexDirection:'row',alignItems:'center',justifyContent:'center', marginVertical:10},
-    icon:{
+    progressText2: { fontSize: 16, color: '#48BF24', fontWeight: 'bold', marginHorizontal: 5 },
+    view: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginVertical: 10 },
+    icon: {
         borderRadius: 100,
         height: 25, width: 25, justifyContent: 'center', alignItems: 'center',
         backgroundColor: '#48BF24'
