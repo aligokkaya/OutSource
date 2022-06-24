@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, SafeAreaView, Image, TouchableOpacity, StyleSheet } from 'react-native'
-import { faGear, faCheck, faPen, faP, faStar, faAngleLeft, faAngleRight, faRightToBracket, faRightFromBracket, faBuildingColumns, faShield, faUsers, faUserGroup } from '@fortawesome/free-solid-svg-icons'
+import { faGear, faCheck, faPen, faStar, faAngleLeft, faAngleRight, faRightToBracket, faRightFromBracket, faBuildingColumns, faShield, faUsers, faUserGroup } from '@fortawesome/free-solid-svg-icons'
 import BackgroundContainer from '../../components/BackgroundContainer'
 import MainHeader from '../../components/MainHeader'
 import Container from '../../components/Container'

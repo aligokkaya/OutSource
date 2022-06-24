@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     },
     text: { fontSize: 16, color: '#000', marginLeft: 5 },
     buttonView: { alignSelf: "center", width: '90%' },
-    button: { backgroundColor: '#3A1BA3', borderRadius: 10, alignItems: 'center', justifyContent: 'center', height: 40, padding: 10 },
+    button: { backgroundColor: '#3A1BA3', borderRadius: 10, alignItems: 'center', justifyContent: 'center', height: 50, padding: 10 },
     buttonText: { color: '#fff', fontSize: 14, fontWeight: 'bold' }
 })
 export default NotificationSettings
