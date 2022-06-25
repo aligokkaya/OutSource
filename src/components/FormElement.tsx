@@ -7,9 +7,10 @@ interface FormElementProps {
     childrenStyle?: any
     children?: any
     icon?: any
+    iconStyle?: any
 }
 
-const FormElement = ({ style, children, childrenStyle, icon }: FormElementProps) => (
+const FormElement = ({ style, children, childrenStyle, icon, iconStyle }: FormElementProps) => (
     <View style={[styles.container, style]}>
         {
             icon ? (
@@ -17,7 +18,7 @@ const FormElement = ({ style, children, childrenStyle, icon }: FormElementProps)
                     <View style={[{ flex: 1 }, childrenStyle]}>
                         {children}
                     </View>
-                    <FontAwesomeIcon icon={icon} color="#3D21A2" size={15} style={{
+                    <FontAwesomeIcon icon={icon} color={iconStyle?.color || "#3D21A2"} size={15} style={{
                         marginLeft: 8
                     }} />
                 </>

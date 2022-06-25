@@ -95,7 +95,7 @@ export default function Account(props: any) {
                     title='Hesaplar'
                     titleStyle={{ fontSize: 18 }}
                     leftonPress={() => props.navigation.goBack()}
-                    rightonPress={() => console.log("a")}
+                    rightonPress={() => props.navigation.navigate('AccountSettings')}
                 />
             </SafeAreaView>
             <View style={{ justifyContent: 'center', alignItems: 'center', marginBottom: 15, zIndex: 12, elevation: 12 }}>
