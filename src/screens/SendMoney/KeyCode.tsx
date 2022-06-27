@@ -56,7 +56,9 @@ export const KeyCode = (props: any) => {
 
             elements.push(
                 <View style={[styles.box, i < inputValue.length && styles.boxActive]} key={i}>
-                    <Text style={styles.text}>{vals[i] || ''}</Text>
+                    <Text style={styles.text}>{
+                        (vals[i] && (props.secureTextEntry ? '•' : vals[i])) || ''
+                    }</Text>
                 </View>
             )
 

@@ -51,6 +51,20 @@ import NewChat from './src/screens/Messages/NewChat';
 import NewGroupChat from './src/screens/Messages/NewGroupChat';
 import CreateNewGroupChat from './src/screens/Messages/CreateNewGroupChat';
 import PayShareBill from './src/screens/Messages/PayShareBill';
+import AccountSettings from './src/screens/AccountSettings/AccountSettings';
+import CardSettings from './src/screens/AccountSettings/CardSettings';
+import ChangeCardPassword from './src/screens/AccountSettings/ChangeCardPassword';
+import ChatSettings from './src/screens/AccountSettings/ChatSettings';
+import LegalLimits from './src/screens/AccountSettings/LegalLimits';
+import VerifyMembership from './src/screens/AccountSettings/VerifyMembership';
+import VerifyMembershipAddress from './src/screens/AccountSettings/VerifyMembershipAddress';
+import VerifyMembershipIdentityInformations from './src/screens/AccountSettings/VerifyMembershipIdentityInformations';
+import VerifyMembershipLastStep from './src/screens/AccountSettings/VerifyMembershipLastStep';
+import MembershipSuccess from './src/screens/AccountSettings/MembershipSuccess';
+import SavedBankAccounts from './src/screens/AccountSettings/SavedBankAccounts';
+import BankAccountDetails from './src/screens/AccountSettings/BankAccountDetails';
+import NewBankAccount from './src/screens/AccountSettings/NewBankAccount';
+import SavedPersons from './src/screens/AccountSettings/SavedPersons';
 import Beginner from './src/screens/Profile/Beginner';
 import Advanced from './src/screens/Profile/Advanced';
 import Settings from './src/screens/Profile/Settings/Settings';
@@ -124,6 +138,21 @@ const App = () => {
           <Stack.Screen name='NewGroupChat' component={NewGroupChat} />
           <Stack.Screen name='CreateNewGroupChat' component={CreateNewGroupChat} />
           <Stack.Screen name='PayShareBill' component={PayShareBill} />
+
+          <Stack.Screen name='AccountSettings' component={AccountSettings} />
+          <Stack.Screen name='CardSettings' component={CardSettings} />
+          <Stack.Screen name='ChangeCardPassword' component={ChangeCardPassword} />
+          <Stack.Screen name='ChatSettings' component={ChatSettings} />
+          <Stack.Screen name='LegalLimits' component={LegalLimits} />
+          <Stack.Screen name='VerifyMembership' component={VerifyMembership} />
+          <Stack.Screen name='VerifyMembershipAddress' component={VerifyMembershipAddress} />
+          <Stack.Screen name='VerifyMembershipIdentityInformations' component={VerifyMembershipIdentityInformations} />
+          <Stack.Screen name='VerifyMembershipLastStep' component={VerifyMembershipLastStep} />
+          <Stack.Screen name='MembershipSuccess' component={MembershipSuccess} />
+          <Stack.Screen name='SavedBankAccounts' component={SavedBankAccounts} />
+          <Stack.Screen name='BankAccountDetails' component={BankAccountDetails} />
+          <Stack.Screen name='NewBankAccount' component={NewBankAccount} />
+          <Stack.Screen name='SavedPersons' component={SavedPersons} />
 
           <Stack.Screen name='Beginner' component={Beginner} />
           <Stack.Screen name='Advanced' component={Advanced} />

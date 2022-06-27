@@ -3,20 +3,24 @@ import React from 'react'
 import FormElement from '../../components/FormElement'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
-const NewDropdown = ({ children, data, icon, elementStyle }: any) => {
+const NewDropdown = ({ children, data, icon, elementStyle, containerStyle, iconStyle }: any) => {
     const [open, setOpen] = React.useState(false)
 
     return (
         <TouchableOpacity
             activeOpacity={0.9}
+            style={[styles.container, containerStyle]}
             onPress={() => {
                 setOpen(prev => !prev)
             }}>
             <FormElement
                 icon={icon}
+                iconStyle={iconStyle}
                 style={elementStyle}
                 childrenStyle={{
-                    paddingTop: 5
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexDirection: 'row'
                 }}>
                 {children}
             </FormElement>
@@ -49,4 +53,8 @@ const NewDropdown = ({ children, data, icon, elementStyle }: any) => {
 
 export default NewDropdown
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        zIndex: 0
+    }
+})
