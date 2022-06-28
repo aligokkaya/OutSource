@@ -73,6 +73,7 @@ import NotificationSettings from './src/screens/Profile/Settings/NotificationSet
 import ResetPasswordStep3 from './src/screens/Profile/ResetPassword/ResetPasswordStep3';
 import ResetPasswordStep2 from './src/screens/Profile/ResetPassword/ResetPasswordStep2';
 import ResetPasswordStep1 from './src/screens/Profile/ResetPassword/ResetPasswordStep1';
+import PersonelInformation2 from './src/screens/Profile/Settings/PersonalInformation2';
 
 const Stack = createNativeStackNavigator();
 
@@ -158,6 +159,7 @@ const App = () => {
           <Stack.Screen name='Advanced' component={Advanced} />
           <Stack.Screen name="Settings" component={Settings}/>
           <Stack.Screen name="PersonelInformation" component={PersonelInformation}/>
+          <Stack.Screen name="PersonelInformation2" component={PersonelInformation2}/>
           <Stack.Screen name="NotificationSettings" component={NotificationSettings}/>
           <Stack.Screen name="ResetPasswordStep1" component={ResetPasswordStep1}/>
           <Stack.Screen name="ResetPasswordStep2" component={ResetPasswordStep2}/>
