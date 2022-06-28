@@ -5,19 +5,17 @@ import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
 import BackgroundContainer from "../../../components/BackgroundContainer";
 import Button from "../../../components/Button";
 import Container from "../../../components/Container";
+import FormElement from "../../../components/FormElement";
 import MainHeader from "../../../components/MainHeader";
 
 const ResetPasswordStep2 = (props: any) => {
-
-    const [inputValue, setInputValue] = useState('')
-    const [focus, setFocus] = useState(false)
     return (
         <BackgroundContainer >
             <SafeAreaView>
                 <MainHeader
                     bgHeader={false}
                     title='Şifre Yenile'
-                    titleStyle={{ fontSize: 18 }}
+                    titleStyle={{ fontSize: 16 }}
                     leftonPress={() => props.navigation.goBack()}
 
                 />
@@ -27,7 +25,7 @@ const ResetPasswordStep2 = (props: any) => {
                         flexDirection: 'row',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        marginTop: 20
+                        marginTop: 30
                     }}>
                         <View style={{
                             alignSelf: 'stretch',
@@ -98,42 +96,61 @@ const ResetPasswordStep2 = (props: any) => {
 
                     <Text style={{
                         alignSelf: 'center',
-                        fontWeight: '500',
+                        fontWeight: '400',
                         marginTop: 30,
                         color: '#141414',
                         fontSize: 14,
-                        textAlign: "center"
+                        textAlign: "center",
+                        marginHorizontal:15
                     }}>
                         Belirlemiş olduğunuz hesap kurtarma sorusunun cevabını giriniz.
                     </Text>
                     <Text style={{
-                        marginTop: 30,
+                        marginVertical: 50,
                         alignSelf: 'center',
-                        fontWeight: 'bold',
-                        fontSize: 17,
-                        color: '#141414'
+                        fontWeight: '500',
+                        fontSize: 16,
+                        color: '#141414',
+                        marginHorizontal:15
                     }}>İlk evcil hayvanınızın adı nedir?</Text>
-                    <View style={styles.viewInput}>
-                        {focus ? <Text style={styles.inputLabel}>Hesap Kurtarma Sorusunun Cevabı</Text> : null}
-                        <TextInput
-                            style={[styles.input, { height: 50 }]}
-                            onChangeText={text => setInputValue(text)}
-                            value={inputValue}
-                            placeholder="Hesap Kurtarma Sorusunun Cevabı"
-                            onFocus={() => setFocus(true)}
-                            onBlur={() => setFocus(false)}
-                        />
-                    </View>
+                    <View style={{ flexDirection: 'row',marginHorizontal:15 }}>
+                            <FormElement style={{
+                                flex: 1, flexDirection: 'column',
+                                alignItems: 'flex-start',
+                                justifyContent: 'center',
+                                paddingTop: 5,
+
+                            }}>
+                                <Text style={{
+                                    color: '#3D21A2',
+                                    fontSize: 12,
+                                    lineHeight: 12,
+                                    fontWeight: '400',
+                                }}>Hesap Kurtarma Sorusunun Cevabı</Text>
+                                <TextInput
+                                    style={{
+                                        fontSize: 16,
+                                        lineHeight: 16,
+                                        fontWeight: '400',
+                                        color: '#141414',
+                                        padding: 0,
+                                        margin: 0
+                                    }}
+                                    value='Zeytin'
+                                />
+                            </FormElement>
+
+                        </View>
                     <View style={{
                         flexDirection: 'row',
-                        alignSelf: 'stretch'
+                        alignSelf: 'stretch',
+                        marginTop:25,marginHorizontal:15
                     }}>
                         <Button
                             onPress={() => {
                             }}
                             butonStyle={{
                                 flex: 1,
-                                marginVertical: 45
                             }} title="Vazgeç" />
                         <Button
                             invert
@@ -143,7 +160,6 @@ const ResetPasswordStep2 = (props: any) => {
                             butonStyle={{
                                 flex: 1,
                                 marginLeft: 15,
-                                marginVertical: 45
                             }} title="Devam Et" />
                     </View>
                 </Container>

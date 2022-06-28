@@ -17,7 +17,7 @@ const ResetPasswordStep1 = (props: any) => {
                 <MainHeader
                     bgHeader={false}
                     title='Şifre Yenile'
-                    titleStyle={{ fontSize: 18 }}
+                    titleStyle={{ fontSize: 16 }}
                     leftonPress={() => props.navigation.goBack()}
 
                 />
@@ -27,7 +27,7 @@ const ResetPasswordStep1 = (props: any) => {
                         flexDirection: 'row',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        marginTop: 20
+                        marginTop: 30,
                     }}>
                         <View style={{
                             paddingHorizontal: 15,
@@ -98,10 +98,11 @@ const ResetPasswordStep1 = (props: any) => {
                     <View style={{
                         flexDirection: 'row',
                         alignItems: 'center',
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        marginLeft:15
                     }}>
                         <CircularProgress
-                            value={20}
+                            value={25}
                             radius={15}
                             activeStrokeWidth={4}
                             inActiveStrokeWidth={4}
@@ -112,41 +113,45 @@ const ResetPasswordStep1 = (props: any) => {
                         <View style={{ marginLeft: 10 }}>
                             <Text style={{
                                 color: '#141414',
-                                fontSize: 14.5
+                                fontSize: 14,
+                                fontWeight:'400'
                             }}>Kalan süre</Text>
                             <Text style={{
                                 color: '#141414',
-                                fontSize: 15,
-                                fontWeight: '700'
+                                fontSize: 14,
+                                fontWeight: '500'
                             }}>182 saniye</Text>
                         </View>
                     </View>
                     <Text style={{
-                        fontSize: 17,
-                        color: '#B9B9B9',
-                        fontWeight: '700'
+                        fontSize: 16,
+                        color: '#B8B8B8',
+                        fontWeight: '500',
+                        marginRight:14
                     }}>Tekrar Gönder</Text>
                 </View>
                 <Text style={{
-                    marginTop: 25,
+                    marginTop: 30,
                     alignSelf: 'center',
-                    fontWeight: 'bold',
-                    fontSize: 17,
+                    fontWeight: '500',
+                    fontSize: 16,
                     color: '#141414'
                 }}>0 (530) 123 45 67</Text>
                 <Text style={{
                     alignSelf: 'center',
-                    fontWeight: '500',
-                    marginTop: 15,
-                    color: '#141414'
+                    fontWeight: '400',
+                    marginTop: 5,
+                    color: '#141414',
+                    fontSize:14
                 }}>
                     numaralı telefonunuza gelen SMS kodunu giriniz.
                 </Text>
                 <View style={{
                     alignSelf: 'center',
-                    marginTop: 25
+                    marginTop: 30
                 }}>
                     <KeyCode
+                        value={'1'}
                         onChange={setValue}
                         length={6}
                         autoFocus
@@ -155,14 +160,14 @@ const ResetPasswordStep1 = (props: any) => {
                 </View>
                 <View style={{
                     flexDirection: 'row',
-                    alignSelf: 'stretch'
+                    alignSelf: 'stretch',
+                    marginTop:48,marginHorizontal:15
                 }}>
                     <Button
                         onPress={() => {
                         }}
                         butonStyle={{
                             flex: 1,
-                            marginVertical: 45
                         }} title="Vazgeç" />
                     <Button
                         invert
@@ -172,7 +177,6 @@ const ResetPasswordStep1 = (props: any) => {
                         butonStyle={{
                             flex: 1,
                             marginLeft: 15,
-                            marginVertical: 45
                         }} title="Kodu Doğrula" />
                 </View>
                 </Container>

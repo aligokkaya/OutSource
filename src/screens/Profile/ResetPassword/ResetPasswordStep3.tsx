@@ -5,18 +5,10 @@ import { SafeAreaView, StyleSheet, Text, TextInput, View } from "react-native";
 import BackgroundContainer from "../../../components/BackgroundContainer";
 import Button from "../../../components/Button";
 import Container from "../../../components/Container";
+import FormElement from "../../../components/FormElement";
 import MainHeader from "../../../components/MainHeader";
 
 const ResetPasswordStep3 = (props: any) => {
-
-    const [inputValue, setInputValue] = useState({
-        passwordText: '',
-        confirmPasswordText: ''
-    })
-    const [focus, setFocus] = useState({
-        password: false,
-        confirm: false
-    })
 
     return (
         <BackgroundContainer >
@@ -24,7 +16,7 @@ const ResetPasswordStep3 = (props: any) => {
                 <MainHeader
                     bgHeader={false}
                     title='Şifre Yenile'
-                    titleStyle={{ fontSize: 18 }}
+                    titleStyle={{ fontSize: 16 }}
                     leftonPress={() => props.navigation.goBack()}
 
                 />
@@ -34,7 +26,7 @@ const ResetPasswordStep3 = (props: any) => {
                         flexDirection: 'row',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        marginTop: 20
+                        marginTop: 30
                     }}>
                         <View style={{
                             alignSelf: 'stretch',
@@ -109,86 +101,112 @@ const ResetPasswordStep3 = (props: any) => {
 
                     <Text style={{
                         alignSelf: 'center',
-                        fontWeight: '500',
+                        fontWeight: '400',
                         marginTop: 30,
+                        marginBottom:20,
                         color: '#141414',
-                        fontSize: 16,
-                        textAlign: "center"
+                        fontSize: 14,
+                        textAlign: "center",
+                        marginHorizontal: 15
                     }}>
                         Lütfen yeni şifrenizi giriniz.
                     </Text>
-                    <View style={styles.viewInput}>
-                        {focus.password ?
-                            <Text style={styles.inputLabel}>Yeni Şifre</Text> : null}
-                        <TextInput
-                            style={[styles.input, { height: 50 }]}
-                            onChangeText={text => setInputValue(prevState => ({ ...prevState, passwordText: text }))}
-                            value={inputValue.passwordText}
-                            placeholder="Yeni Şifre"
-                            onFocus={() => setFocus(prevState => ({ ...prevState, password: true }))}
-                            onBlur={() => setFocus(prevState => ({ ...prevState, password: false }))}
-                        />
+                    <View style={{ flexDirection: 'row', marginHorizontal: 15 }}>
+                        <FormElement style={{
+                            flex: 1, flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            justifyContent: 'center',
+                            paddingTop: 5,
+
+                        }}>
+                            <Text style={{
+                                color: '#3D21A2',
+                                fontSize: 12,
+                                lineHeight: 12,
+                                fontWeight: '400',
+                            }}>Yeni Şifre</Text>
+                            <TextInput
+                                style={{
+                                    fontSize: 16,
+                                    lineHeight: 16,
+                                    fontWeight: '400',
+                                    color: '#141414',
+                                    padding: 0,
+                                    margin: 0
+                                }}
+                                value='*****'
+                            />
+                        </FormElement>
+
                     </View>
                     <View style={styles.textView}>
                         <Text style={styles.text}>Şifre Oluşturma kriterleri:</Text>
                         <View style={{ flexDirection: 'row' }}>
-                            {inputValue.passwordText.length == 6 ? <View style={{
-                                width: 20,
-                                height: 20,
+                            <View style={{
+                                width: 16,
+                                height: 16,
                                 borderRadius: 20,
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 borderWidth: 1,
                                 borderColor: '#48BF24',
                                 backgroundColor: '#48BF24',
-                                marginRight: 5
+                                marginRight: 5, marginTop: 7
 
                             }}>
-                                <FontAwesomeIcon icon={faCheck} color="#fff" size={15} />
-                            </View> : <View style={{ width: 8, height: 8, backgroundColor: '#000', borderRadius: 10, marginTop: 7,marginRight:2 }} />}
-                            <Text style={[styles.text, { color: inputValue.passwordText.length == 6 ? '#48BF24' : '#000' }]}>
+                                <FontAwesomeIcon icon={faCheck} color="#fff" size={13} />
+                            </View>
+                            <Text style={[styles.text, { color: '#48BF24' ,marginTop:5}]}>
                                 6 karakter
                             </Text>
                         </View>
                         <View style={{ flexDirection: 'row' }}>
-                            <View style={{ width: 8, height: 8, backgroundColor: '#000', borderRadius: 10, marginTop: 7,marginRight:2 }} />
-                            <Text style={styles.text}>
+                            <View style={{ width: 7, height: 7, backgroundColor: '#727272', borderRadius: 10, marginTop: 9, marginRight: 2 }} />
+                            <Text style={[styles.text, { color: '#727272' }]}>
                                 Yalnızca numerik karakterler
                             </Text>
                         </View>
 
 
                     </View>
-                    <View style={styles.viewInput}>
-                        {focus.confirm ?
-                            <Text style={styles.inputLabel}>Yeni Şifre Tekrar</Text> : null}
-                        <TextInput
-                            style={[styles.input, { height: 50 }]}
-                            onChangeText={text => setInputValue(prevState => ({ ...prevState, confirmPasswordText: text }))}
-                            value={inputValue.confirmPasswordText}
-                            placeholder="Yeni Şifre Tekrar"
-                            keyboardType="numeric"
-                            onFocus={() => setFocus(prevState => ({ ...prevState, confirm: true }))}
-                            onBlur={() => setFocus(prevState => ({ ...prevState, confirm: false }))}
-                        />
+                    <View style={{ flexDirection: 'row', marginHorizontal: 15 }}>
+                        <FormElement style={{
+                            flex: 1, flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            justifyContent: 'center',
+                            paddingTop: 5,
+
+                        }}>
+                            <TextInput
+                                style={{
+                                    fontSize: 16,
+                                    lineHeight: 16,
+                                    fontWeight: '400',
+                                    color: '#B8B8B8',
+                                    padding: 0,
+                                    margin: 0
+                                }}
+                                value='Yeni Şifre Tekrar'
+                            />
+                        </FormElement>
+
                     </View>
                     <View style={{
                         flexDirection: 'row',
-                        alignSelf: 'stretch'
+                        alignSelf: 'stretch', marginTop: 15,marginHorizontal:15
+
                     }}>
                         <Button
                             onPress={() => {
                             }}
                             butonStyle={{
                                 flex: 1,
-                                marginVertical: 30
                             }} title="Vazgeç" />
                         <Button
                             invert
                             butonStyle={{
                                 flex: 1,
                                 marginLeft: 15,
-                                marginVertical: 30
                             }} title="Şifreyi Yenile" />
                     </View>
                 </Container>
@@ -199,11 +217,8 @@ const ResetPasswordStep3 = (props: any) => {
 }
 
 const styles = StyleSheet.create({
-    inputLabel: { marginLeft: 10, fontSize: 12, color: '#380796' },
-    input: { height: 40, fontSize: 14, marginHorizontal: 5, color: '#000' },
-    viewInput: { width: '100%', borderRadius: 10, borderWidth: 0.5, borderColor: '#b9b9b9', marginTop: 15 },
-    textView: { margin: 10 },
-    text: { fontSize: 16, color: '#000' }
+    textView: { marginHorizontal: 15, marginTop: 20 },
+    text: { fontSize: 14, color: '#141414', fontWeight: '400',marginVertical:2 }
 })
 
 export default ResetPasswordStep3
