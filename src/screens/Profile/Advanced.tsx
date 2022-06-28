@@ -93,7 +93,7 @@ export default function Advanced(props: any) {
                         </LinearGradient>
                     </View>
                 </View>
-                <Container valueHeight={2}>
+                <Container valueHeight={1.8}>
                     <ScrollView>
                         <View style={[styles.containerChildView, { marginTop: 17 }]}>
                             <FontAwesomeIcon icon={faGear} size={18} color="#3D21A2" />

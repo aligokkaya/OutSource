@@ -40,7 +40,7 @@ const PersonelInformation = (props: any) => {
                             />
                             <Text style={{alignSelf:'flex-end',marginRight:33,fontSize:12,fontWeight:'500',color:'#141414'}}>%90</Text>
                         </View>
-                        <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row',marginHorizontal:15 }}>
                             <FormElement style={{
                                 flex: 1, flexDirection: 'column',
                                 alignItems: 'flex-start',
@@ -67,7 +67,7 @@ const PersonelInformation = (props: any) => {
                                 />
                             </FormElement>
                         </View>
-                        <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row',marginHorizontal:15 }}>
                             <FormElement style={{
                                 flex: 1, flexDirection: 'column',
                                 alignItems: 'flex-start',
@@ -94,7 +94,7 @@ const PersonelInformation = (props: any) => {
                                 />
                             </FormElement>
                         </View>
-                        <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row',marginHorizontal:15 }}>
                             <FormElement style={{
                                 flex: 1, flexDirection: 'column',
                                 alignItems: 'flex-start',
@@ -122,7 +122,7 @@ const PersonelInformation = (props: any) => {
                             </FormElement>
 
                         </View>
-                        <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row',marginHorizontal:15 }}>
                             <FormElement style={{
                                 flex: 1, flexDirection: 'column',
                                 alignItems: 'flex-start',
@@ -143,7 +143,7 @@ const PersonelInformation = (props: any) => {
                                 />
                             </FormElement>
                         </View>
-                        <View style={{ flexDirection: 'row' }}>
+                        <View style={{ flexDirection: 'row',marginHorizontal:15 }}>
                             <FormElement style={{
                                 flex: 1, flexDirection: 'row',
                                 alignItems: 'flex-start',
@@ -167,7 +167,7 @@ const PersonelInformation = (props: any) => {
                             </FormElement>
                         </View>
                         <View style={{
-                            flexDirection: 'row'
+                            flexDirection: 'row',marginHorizontal:15
                         }}>
                             <NewDropdown data={['aa']}>
                                 <>
@@ -175,7 +175,7 @@ const PersonelInformation = (props: any) => {
                                         marginLeft: 5,
                                         fontSize: 16,
                                         fontWeight: '400',
-                                        color: '#141414', width: '92%'
+                                        color: '#141414', width: '95%'
                                     }}>Meslek Grubu</Text>
                                     <FontAwesomeIcon icon={faChevronDown} color="#3D21A2" size={12} style={{
                                         marginLeft: 8
@@ -184,10 +184,10 @@ const PersonelInformation = (props: any) => {
                             </NewDropdown>
                         </View>
                         <View style={{ flexDirection: 'row', marginTop: 50 }}>
-                            <Text style={{ fontSize: 16, fontWeight: '500', color: '#141414', textAlign: 'left' }}>Hesap Güvenliği</Text>
+                            <Text style={{ fontSize: 16, fontWeight: '500', color: '#141414', textAlign: 'left',marginHorizontal:10 }}>Hesap Güvenliği</Text>
                         </View>
                         <View style={{
-                            flexDirection: 'row'
+                            flexDirection: 'row',marginHorizontal:15
                         }}>
                             <NewDropdown data={['aa']}>
                                 <>
@@ -195,7 +195,7 @@ const PersonelInformation = (props: any) => {
                                         marginLeft: 5,
                                         fontSize: 16,
                                         fontWeight: '400',
-                                        color: '#141414',  width: '92%'
+                                        color: '#141414',  width: '94%'
                                     }}>Hesap Kurtarma Sorusu</Text>
                                     <FontAwesomeIcon icon={faChevronDown} color="#3D21A2" size={12} style={{
                                         marginLeft: 8
@@ -203,7 +203,7 @@ const PersonelInformation = (props: any) => {
                                 </>
                             </NewDropdown>
                         </View>
-                        <View style={{ flexDirection: 'row', marginBottom: 30 }}>
+                        <View style={{ flexDirection: 'row', marginBottom: 30,marginHorizontal:15 }}>
                             <FormElement style={{
                                 flex: 1, flexDirection: 'column',
                                 alignItems: 'flex-start',
@@ -239,7 +239,7 @@ const PersonelInformation = (props: any) => {
     )
 }
 const styles = StyleSheet.create({
-    firstButton: { marginTop: 5, marginBottom: 44, height: 50, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
-    secondButton: { marginVertical: 15, height: 50, borderRadius: 10, alignItems: 'center', justifyContent: 'center' },
+    firstButton: { marginTop: 5, marginBottom: 44, height: 50, borderRadius: 10, alignItems: 'center', justifyContent: 'center',marginHorizontal:10 },
+    secondButton: { marginVertical: 15, height: 50, borderRadius: 10, alignItems: 'center', justifyContent: 'center',marginHorizontal:10 },
 })
 export default PersonelInformation
