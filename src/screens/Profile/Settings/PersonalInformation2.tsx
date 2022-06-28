@@ -4,8 +4,7 @@ import BackgroundContainer from "../../../components/BackgroundContainer";
 import Container from "../../../components/Container";
 import MainHeader from "../../../components/MainHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCalendarMinus, faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import SimpleGradientProgressbarView from "react-native-simple-gradient-progressbar-view";
+import { faCalendarMinus, faCheck, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../../components/Button";
 import FormElement from "../../../components/FormElement";
 import NewDropdown from "../../Deposit/NewDropdown";
@@ -23,22 +22,16 @@ const PersonelInformation2 = (props: any) => {
 
                     />
                     <Container valueHeight={0.7}>
-                        <View style={{ flexDirection: 'column', marginTop: 20 }}>
-                            <Text style={{ fontSize: 14, fontWeight: '500', color: '#141414', textAlign: 'center' }}>Profil Doluluk Oranı</Text>
-
-                            <SimpleGradientProgressbarView
-                                style={{
-                                    backgroundColor: '#E7E7E7',
-                                    height: 5,
-                                    marginTop: 5,
-                                    borderRadius: 8,
-                                }}
-                                fromColor="#00bed1"
-                                toColor="#00bed1"
-                                progress={1}
-                                cornerRadius={1}
-                            />
-                            <Text style={{ alignSelf: 'flex-end', marginRight: 33, fontSize: 12, fontWeight: '500', color: '#141414' }}>%90</Text>
+                        <View style={{ flexDirection: 'row', marginTop: 20, justifyContent: 'center', alignItems: 'center', }}>
+                            < View style={{
+                                borderRadius: 50,
+                                height: 20, width: 20, justifyContent: 'center', alignItems: 'center',
+                                borderWidth: 1, borderColor: '#fff', backgroundColor: '#48BF24'
+                            }}>
+                                <FontAwesomeIcon icon={faCheck} color="#fff" size={15} />
+                            </View>
+                            <Text style={{ fontSize: 14, fontWeight: '500', color: '#48BF24', textAlign: 'center' }}>
+                                Profil Doluluk Oranı(%100)</Text>
                         </View>
                         <View style={{ flexDirection: 'row' }}>
                             <FormElement style={{
