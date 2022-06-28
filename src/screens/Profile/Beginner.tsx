@@ -91,7 +91,7 @@ export default function Beginner(props: any) {
                     <ScrollView>
                     <View style={[styles.containerChildView, { marginTop: 17 }]}>
                         <FontAwesomeIcon icon={faGear} size={18} color="#3D21A2" />
-                        <View style={{ marginHorizontal: 22, alignItems: 'flex-start', justifyContent: 'flex-start' }}><Text style={styles.titleText}>Ayarlar</Text>
+                        <View style={{ marginHorizontal: 22, alignItems: 'flex-start', justifyContent: 'flex-start' ,width:'70%'}}><Text style={styles.titleText}>Ayarlar</Text>
                             <Text style={styles.contentText}>Profil, şifre, kart, mesajlaşma, dil ve bildirim ayarları</Text></View>
                         <TouchableOpacity onPress={() => props.navigation.navigate('Settings')
                         }>
@@ -106,7 +106,7 @@ export default function Beginner(props: any) {
                         <View style={styles.containerChildView}>
                             <FontAwesomeIcon icon={faShield} size={20} color="#3D21A2" />
                             <FontAwesomeIcon icon={faMagnifyingGlass} size={11} color="#fff" style={{ position: 'absolute', left: 5, alignSelf: 'center' }} />
-                            <View style={{ marginHorizontal: 22, alignItems: 'flex-start', justifyContent: 'flex-start' }}><Text style={styles.titleText}>Yasal Limitler</Text>
+                            <View style={{ marginHorizontal: 22, alignItems: 'flex-start', justifyContent: 'flex-start',width:'70%'  }}><Text style={styles.titleText}>Yasal Limitler</Text>
                                 <Text style={styles.contentText}>Yasal limitleri ve hesap türünü güncelleme işlemleri</Text></View>
                             <TouchableOpacity onPress={() => console.log("Yasal Limitler")
                             }>
@@ -122,7 +122,7 @@ export default function Beginner(props: any) {
                     <View >
                         <View style={styles.containerChildView}>
                             <FontAwesomeIcon icon={faBuildingColumns} size={19} color="#3D21A2" />
-                            <View style={{ marginHorizontal: 22, alignItems: 'flex-start', justifyContent: 'flex-start' }}><Text style={styles.titleText}>Banka Hesapları</Text>
+                            <View style={{ marginHorizontal: 22, alignItems: 'flex-start', justifyContent: 'flex-start',width:'70%' }}><Text style={styles.titleText}>Banka Hesapları</Text>
                                 <Text style={styles.contentText}>Kayıtlı banka hesapları ile ilgili işlemler</Text></View>
                             <TouchableOpacity onPress={() => console.log("Banka Hesapları")
                             }>
@@ -138,7 +138,7 @@ export default function Beginner(props: any) {
                     <View >
                         <View style={styles.containerChildView}>
                             <FontAwesomeIcon icon={faUserGroup} size={20} color="#3D21A2" />
-                            <View style={{ marginHorizontal: 22, alignItems: 'flex-start', justifyContent: 'flex-start' }}><Text style={styles.titleText}>Kayıtlı Kişilerim</Text>
+                            <View style={{ marginHorizontal: 22, alignItems: 'flex-start', justifyContent: 'flex-start',width:'70%'  }}><Text style={styles.titleText}>Kayıtlı Kişilerim</Text>
                                 <Text style={styles.contentText}>Kayıtlı banka hesapları ile ilgili işlemler</Text></View>
                             <TouchableOpacity onPress={() => console.log("kayıtlı kişilerim")
                             }>
