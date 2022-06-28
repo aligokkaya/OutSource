@@ -13,22 +13,22 @@ export default function Advanced(props:any) {
                 <MainHeader
                     bgHeader={false}
                     title='Profilim'
-                    titleStyle={{ fontSize: 18 }}
+                    titleStyle={{ fontSize: 16 }}
                     leftonPress={() => props.navigation.goBack()}
 
                 />
                 <View style={styles.view}>
                     <View style={styles.subView}>
-                        <View style={styles.firstCircleView}>
+                        {/* <View style={styles.firstCircleView}>
                             <Image source={require('../../../images/UserPhoto.png')} style={styles.userImage} />
                             < View style={styles.bannerIcon}>
                                 <FontAwesomeIcon icon={faPen} color="#fff" size={12} />
                             </View>
-                        </View>
-                        <View style={styles.viewText}>
+                        </View> */}
+                        {/* <View style={styles.viewText}>
                             <Text style={styles.text}>Cansu Ural</Text>
                             <Text style={styles.childText}>Standart Hesap</Text>
-                        </View>
+                        </View> */}
                     </View>
                     <View style={styles.subView}>
                         <View style={styles.shadowView}>
